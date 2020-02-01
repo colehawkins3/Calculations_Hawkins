@@ -45,15 +45,13 @@ int validateInt(int &intInput)
 {
 	while (true)
     {
-        cout << "Enter an integer: ";
-
         try
         {
             intInput = getValidatedInput<int>();
         }
         catch (exception e)
         {
-            cerr << e.what() << endl;
+            cerr << e.what() << " Invalid Input. Please enter a number without a decimal that is not equal to 0." << endl;
             continue;
         }
 
@@ -67,7 +65,7 @@ double validateDouble(double &doubleInput)
 {
 	while (true)
     {
-        cout << "Enter a number with or without decimals (double): ";
+        
 
         try
         {
@@ -75,7 +73,7 @@ double validateDouble(double &doubleInput)
         }
         catch (exception e)
         {
-            cerr << e.what() << ": Invalid input."<< endl;
+            cerr << e.what() << " Invalid Input. Please enter a number with or without a decimal that is not equal to 0."<< endl;
             continue;
         }
 

@@ -7,7 +7,7 @@
 	and/or legitimate user error. 
 	//Try and Catch blocks are used in error checking
 	Teacher: Dr. Tyson McMillan, Ph.D.  
-  STUDENT (McMillanite):
+  STUDENT (Hawkins): 2/1/20
 */
 #include <cstdlib>  // Provides EXIT_SUCCESS
 #include <iostream>  // Provides cout, cerr, endl
@@ -17,92 +17,76 @@
 #include<sstream> //for string manipulation and comparison
 using namespace std;
 
+//Cole_Hawkins_Calculations 2/1/20
+//This is a program to work with the various arithmetic operators in C++ and conditions
+#include <iostream>
 int main()
 {
-   //***********Validating int data type******************/
-	int input = 0;
-	input = validateInt(input); //validate my integer by function call, save that value into input
-    cout << "You entered valid int: " << input << endl;
-    
-	/****************Extend code to Validate double (follow int pattern)**********/
-	double inputDouble = 0.0;
-  	inputDouble = validateDouble(inputDouble); //validate my double by function call, save that value into inputDouble
-    cout << "You entered valid double: " << inputDouble << endl;
+//Declare and intialize variables
+//Number variables:
+double number1 = 0.0;
+double number2 = 0.0;
+int number3 = 0;
+int number4 = 0;
+//Mathematical variables
+double addition = 0.0;
+double subtraction = 0.0;
+double multiplication = 0.0;
+double division = 0.0;
+int modulus = 0;
 
-	/****************Extend code to Validate char (follow int pattern)**********/
-	char inputChar = '\0'; //{0}
-	inputChar = validateChar(inputChar); //validate my char by function call, save that value into inputChar
-    cout << "You entered valid char: " << inputChar << endl;
+//Input
+do
+{
+cout << "Please enter a number with or without a decimal, that is not equal to 0, for Number 1: " << endl;
+number1 = validateDouble(number1);
+if (number1 != 0)
+  {
+cout << "You entered: " << number1 << endl;
+  }
+}
+while(number1 == 0 ); 
 
-	/****************Extend code to Validate string (follow int pattern, if possible)**********/
-	string inputString = (""); 
-	inputString = validateString(inputString); //validate my string by function call, save that value into inputString
-    cout << "You entered string: " << inputString << endl;
 
-	/****************Extend code to Validate if truly an int and greater than 77 **********/
-	int input2 = 0;
-	
-	do
-	{
-		cout << "Enter an integer greater than 77." << endl;  
-		input2 = validateInt(input2); //validate my integer by function call, save that value into input
-		
-		if(input2 < 77)
-		{
-			cout << "\nInvalid input: (" << input2 <<") number must be greater than 77." << endl;
-		}
-	}
-	while(input2 < 77); //loop until input2 is greather than 77
+do
+{
+cout << "Please enter a number with or without a decimal, that is not equal to 0, for Number 2: " << endl;
+number2 = validateDouble(number2);
+if (number2 != 0)
+  {
+  cout << "You entered: " << number2 << endl;
+  }
+}
+while(number2 == 0 );
 
-    cout << "You entered valid int: " << input2 << endl;
 
-	/****************Extend code to Validate if truly an double and greater than 0.00 **********/
-	double inputDouble2 = 0.0;
-	
-	do
-	{
-		cout << "Enter an number greater than 0."<< endl; 
-		inputDouble2 = validateDouble(inputDouble2); //validate my integer by function call, save that value into input
-		
-		if(inputDouble2 < 0)
-		{
-			cout << "\nInvalid input: (" << inputDouble2 <<") number must be greater than 0." << endl;
-		}
-	}
-	while(inputDouble2 < 0); //loop until inputDouble2 is greather than 0
+cout << "Please enter a number without a decimal for Number 3: " << endl;
+number3 = validateInt(number3);
 
-    cout << "You entered valid double: " << inputDouble2<< endl;
-    //A program to output grade values
-   //based upon numberical input of the user yourName: Teacher: Dr_T 8-28-2019
-   double grade = 0.0; 
-   do
-   { // begin do 
-      cout << "\nPlease enter a numerical grade (-1 to exit): ";
-      grade = validateDouble(grade); //accept grade and validate the data type
-      //if condition test
-      if(grade >= 90.0)
-      {
-        cout << "\nThat's an A!" << endl; 
-      }
-      else if(grade >= 80.0 && grade <= 89.9)
-      {
-        cout << "\nThat's a B!" << endl; 
-      }
-      else if(grade >= 70.0 && grade <= 79.9)
-      {
-        cout << "\nThat's a C!" << endl; 
-      }
-      else if(grade >= 60.0 && grade <= 69.9)
-      {
-        cout << "\nYikes. That's a D!" << endl; 
-      }
-      else if(grade < 60.0)
-      {
-        cout << "\nSee you next semester: F" << endl; 
-      }
-      else {cout << "\nInvalid input." << endl;}
+do
+{
+cout << "Please enter a number without a decimal, that is not equal to 0, for Number 4: " << endl;
+number4 = validateInt(number4);
+if (number4 != 0)
+  {
+  cout << "You entered: " << number4 << endl;
+  }
+}
+while(number4 == 0 );
 
-   }while(grade != -1); //end do 
-   
+
+//Processing
+addition = number1+number2;
+subtraction = number1-number2;
+multiplication = number1*number2;
+division = number1/number2;
+modulus = number3%number4;
+//Output
+cout << "Your result is for addition (number1 + number2) is: " << addition << endl;
+cout << "Your result is for subtraction (number1 - number2) is: " << subtraction << endl;
+cout << "Your result is for multiplication(number1 * number2) is: " << multiplication << endl;
+cout << "Your result is for division(number1 / number2) is: " << division << endl;
+cout << "Your result is for modulus (number3 % number4) is: " << modulus << endl;
+
     return 0;
 }
