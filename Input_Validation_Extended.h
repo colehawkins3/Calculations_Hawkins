@@ -51,7 +51,7 @@ int validateInt(int &intInput)
         }
         catch (exception e)
         {
-            cerr << e.what() << " Invalid Input. Please enter a number without a decimal that is not equal to 0." << endl;
+            cerr << e.what() << " Invalid Input. Please enter a number without a decimal that is not equal to 0." << endl;//changed message to be more accurate
             continue;
         }
 
